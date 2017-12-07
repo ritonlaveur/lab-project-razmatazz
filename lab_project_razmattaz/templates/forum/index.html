@@ -2,11 +2,24 @@
 
 {% block content %}
     <h3>Posts</h3>
+    
+    <a href="{% url 'post_new' %}">Create new Post</a>
+    
     <ul>
         {% for post in posts %}
             <a href="{% url 'post_detail' post.id%}">
-                <li>{{post.title}}</li>
+                <li>{{post.title}} {{post.date}}</li>
             </a>
         {% endfor %}
     </ul>
-{% endblock %}x3
+    
+    <!--<form id="questionForm" action="/create_question/" method="post">-->
+    <!--    <label for="questionTitleInput">Title:</label>-->
+    <!--    <input type="text" name="questionTitleInput" value="{{question_title}}"/>-->
+    <!--    </br>-->
+    <!--</form>-->
+    <!--<textarea form="questionForm" cols="35" wrap="soft"></textarea> </br>-->
+    <!--<input form="questionForm" type="submit" value="OK"/>-->
+    
+    
+{% endblock %}
