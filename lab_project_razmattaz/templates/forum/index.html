@@ -8,18 +8,9 @@
     <ul>
         {% for post in posts %}
             <a href="{% url 'post_detail' post.id%}">
-                <li>{{post.title}} {{post.date}}</li>
+                <li><p>{{post.title}}</p> <p>{{post.date}}</p></li>
+                <a href="{% url 'post_delete' post.id %}">Delete</a>
             </a>
         {% endfor %}
     </ul>
-    
-    <!--<form id="questionForm" action="/create_question/" method="post">-->
-    <!--    <label for="questionTitleInput">Title:</label>-->
-    <!--    <input type="text" name="questionTitleInput" value="{{question_title}}"/>-->
-    <!--    </br>-->
-    <!--</form>-->
-    <!--<textarea form="questionForm" cols="35" wrap="soft"></textarea> </br>-->
-    <!--<input form="questionForm" type="submit" value="OK"/>-->
-    
-    
 {% endblock %}
