@@ -7,7 +7,7 @@ from django.utils import timezone
 from django.shortcuts import redirect
 
 from .forms import PostForm
-
+from .forms import CommentForm
 
 def post_new(request):
    if request.method == "POST":
@@ -22,6 +22,23 @@ def post_new(request):
       form = PostForm()
    
    return render(request,'forum/post_edit.html', {'form':form})
+   
+def comment_new(request,id):
+   if request.method == "POST":
+      form = CommentForm(request.POST)
+      if form.is_valid():
+         comment = form.save(commit=False)
+         comment.post = Post.objects.get(id=id)
+         comment.author = request.user
+         comment.date = timezone.now()
+         comment.save()
+         return  redirect('post_detail',id=id)
+   else:
+      form = CommentForm()
+   
+   post = Post.objects.get(id=id)
+   return render(request,'forum/comment_edit.html',{'form':form,'post':post})
+
 
 def index(request):
    posts = Post.objects.all()
@@ -40,4 +57,10 @@ def post_detail(request,id):
       'comments' : comments
    })
    
+def post_delete(request,id):
+   
+   post = Post.objects.get(id=id)
+   post.delete()
+
+   return redirect('index')
 
