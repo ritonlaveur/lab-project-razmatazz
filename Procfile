@@ -1,1 +1,1 @@
-web: gunicorn project.wsgi --log-file -
+web: gunicorn lab_project_razmattaz.wsgi --log-file -
