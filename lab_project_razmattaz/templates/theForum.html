@@ -4,17 +4,17 @@
 <html>
     <head>
         <!--<meta charset="utf-8">-->
-        <title>{%block tittle %}{% endblock %}</title>
+        <title>My amazing forum</title>
         <!--<meta name="description" content="">-->
         <link href="{% static "css/base.css" %}" rel="stylesheet">
     </head>
     <body>
-        <div id="header">
-            <span class="logo">lab-project-razmatazz</span>
-        </div>
         <div id="content">
-        {% block content %}
-        {% endblock %}
+            {% block content %}
+                <h1 class="title">Henry's amazing skills</h1>
+                <p><span>Email: </span> {{ email }} </p>
+                <p><span>Name: </span> {{ name }} </p>
+            {% endblock %}
         </div>
         <!--<script type="text/javascript" src="{% static 'main.js' %}"></script>-->
     </body>

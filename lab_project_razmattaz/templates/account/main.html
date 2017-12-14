@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Kings forum</title>
+  {% block body %}
+
+  <div>
+
+  <div>
+    <ul>
+      <li>Kings Forum</li>
+      <button onclick="window.location.href='/logout'"><i></i>Disconnect</li>
+    </ul>
+  </div>
+
+
+    <div>
+      <h2>Hi, {{ name }}!</h2>
+      <p>You're now connected to our Forum </p>
+      <p>Your email of connection is {{ emailAddress }} </p>
+    </div>
+  {% endblock body %}
+  </head>
+</html>

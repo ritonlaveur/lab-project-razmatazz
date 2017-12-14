@@ -25,11 +25,32 @@ SECRET_KEY = 'hrmm3=6hzb=ch7&_io5@+z!+a#_+5$ybvqz($4eps9q_mi1zg('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['lab-project-razmatazz-ritonlaveur.c9users.io', 'localhost', '0.0.0.0', '127.0.0.1']
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
 # Application definition
+SITE_ID = 1
+
+# MIDDLEWARE_CLASSES = [
+#     'django.contrib.auth.middleware.AuthenticationMiddleware',
+#     'django.contrib.sessions.middleware.SessionMiddleware',
+#     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+#     'django.contrib.messages.middleware.MessageMiddleware',
+#     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+#     'django.middleware.common.CommonMiddleware',
+# ]
+
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -39,18 +60,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'forum',
+    'django.contrib.sites',
+    'microsoft_auth',
 ]
 
-MIDDLEWARE_CLASSES = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-]
+    # 'django.middleware.security.SecurityMiddleware',
+
 
 ROOT_URLCONF = 'lab_project_razmattaz.urls'
 
@@ -65,6 +80,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'microsoft_auth.context_processors.microsoft',
             ],
         },
     },
@@ -82,6 +98,17 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+AUTHENTICATION_BACKENDS = [
+    'microsoft_auth.backends.MicrosoftAuthenticationBackend',
+    'django.contrib.auth.backends.ModelBackend' # if you also want to use Django's authentication
+    # I recommend keeping this with at least one database superuser in case of unable to use others
+]
+
+MICROSOFT_AUTH_LOGIN_TYPE = 'o365'  # Enterprise Office 365 authentication
+MICROSOFT_AUTH_CLIENT_ID = '37e282a3-5a64-43f2-94a7-604b9a6f3bd5'
+MICROSOFT_AUTH_CLIENT_SECRET = 'dxotIUMJ9{#dclERA4542_#'
+
 
 
 # Password validation
