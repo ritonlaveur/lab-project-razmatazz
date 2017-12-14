@@ -26,7 +26,6 @@ SECRET_KEY = 'hrmm3=6hzb=ch7&_io5@+z!+a#_+5$ybvqz($4eps9q_mi1zg('
 DEBUG = False
 
 ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '0.0.0.0', '127.0.0.1']
-
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Application definition
@@ -92,7 +91,6 @@ db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
 DATABASES['default']['CONN_MAX_AGE'] = 500
 
-
 AUTHENTICATION_BACKENDS = [
     'microsoft_auth.backends.MicrosoftAuthenticationBackend',
     'django.contrib.auth.backends.ModelBackend' # if you also want to use Django's authentication
@@ -102,7 +100,6 @@ AUTHENTICATION_BACKENDS = [
 MICROSOFT_AUTH_LOGIN_TYPE = 'o365'  # Enterprise Office 365 authentication
 MICROSOFT_AUTH_CLIENT_ID = '37e282a3-5a64-43f2-94a7-604b9a6f3bd5'
 MICROSOFT_AUTH_CLIENT_SECRET = 'dxotIUMJ9{#dclERA4542_#'
-
 
 
 # Password validation
