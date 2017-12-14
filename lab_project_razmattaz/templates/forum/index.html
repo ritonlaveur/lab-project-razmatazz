@@ -8,7 +8,7 @@
     <ul>
         {% for post in posts %}
             <a href="{% url 'post_detail' post.id%}">
-                <li><p>{{post.title}}</p> <p>{{post.date}}</p></li>
+                <li><p>{{post.title}} <font size="4">{{post.date}}</font></p></li>
                 <a href="{% url 'post_delete' post.id %}">Delete</a>
             </a>
         {% endfor %}
