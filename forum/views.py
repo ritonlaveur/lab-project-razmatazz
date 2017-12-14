@@ -6,6 +6,7 @@ from forum.models import Comment
 from django.utils import timezone
 from django.shortcuts import redirect
 
+<<<<<<< HEAD
 # post and comment forms 
 from .forms import PostForm
 from .forms import CommentForm
@@ -46,19 +47,33 @@ def gettoken(request):
        'user_name' : user['displayName']
    })
   
+=======
+from .forms import PostForm
+from .forms import CommentForm
+
+>>>>>>> ccae6210697fbedb3e5b15e3364a08ee0500fd10
 def post_new(request):
    if request.method == "POST":
       form = PostForm(request.POST)
       if form.is_valid():
          post = form.save(commit=False)
+<<<<<<< HEAD
          post.author = request.session['user_email']
+=======
+         post.author = request.user
+>>>>>>> ccae6210697fbedb3e5b15e3364a08ee0500fd10
          post.date = timezone.now()
          post.save()
          return redirect('post_detail', id=post.id)
    else:
       form = PostForm()
+<<<<<<< HEAD
    return render(request,'forum/post_edit.html', {'form':form})
 
+=======
+   
+   return render(request,'forum/post_edit.html', {'form':form})
+>>>>>>> ccae6210697fbedb3e5b15e3364a08ee0500fd10
    
 def comment_new(request,id):
    if request.method == "POST":
@@ -66,20 +81,49 @@ def comment_new(request,id):
       if form.is_valid():
          comment = form.save(commit=False)
          comment.post = Post.objects.get(id=id)
+<<<<<<< HEAD
          comment.author = request.session['user_email']
+=======
+         comment.author = request.user
+>>>>>>> ccae6210697fbedb3e5b15e3364a08ee0500fd10
          comment.date = timezone.now()
          comment.save()
          return  redirect('post_detail',id=id)
    else:
       form = CommentForm()
+<<<<<<< HEAD
    post = Post.objects.get(id=id)
    return render(request,'forum/comment_edit.html',{'form':form,'post':post})
+=======
+   
+   post = Post.objects.get(id=id)
+   return render(request,'forum/comment_edit.html',{'form':form,'post':post})
+
+>>>>>>> ccae6210697fbedb3e5b15e3364a08ee0500fd10
 
 def index(request):
    posts = Post.objects.all()
    return render(request,'forum/index.html',{
        'posts' : posts,
    })
+   
+def post_detail(request,id):
+   try:
+      post = Post.objects.get(id=id)
+      comments = Comment.objects.filter(post__id=id)
+   except Post.DoesNotExist:
+      raise Http404('This post does not exist')
+   return render(request,'forum/post_detail.html',{
+      'post' : post,
+      'comments' : comments
+   })
+   
+def post_delete(request,id):
+   
+   post = Post.objects.get(id=id)
+   post.delete()
+
+   return redirect('index')
 
 def post_detail(request,id):
    try:

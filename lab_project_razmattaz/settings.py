@@ -23,9 +23,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'hrmm3=6hzb=ch7&_io5@+z!+a#_+5$ybvqz($4eps9q_mi1zg('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
+<<<<<<< HEAD
 ALLOWED_HOSTS = ['lab-project-razmatazz-ritonlaveur.c9users.io', 'localhost', '0.0.0.0', '127.0.0.1']
+=======
+ALLOWED_HOSTS = ['lab-project-razmattaz-shakeelsubratty.c9users.io']
+>>>>>>> ccae6210697fbedb3e5b15e3364a08ee0500fd10
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
@@ -81,7 +85,7 @@ WSGI_APPLICATION = 'lab_project_razmattaz.wsgi.application'
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
@@ -131,11 +135,13 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR,'lab_project_razmattaz','collected_statics')
+
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'lab_project_razmattaz', 'static'),
 )
