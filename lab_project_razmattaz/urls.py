@@ -21,21 +21,13 @@ from forum import views
 
 
 urlpatterns = [
-<<<<<<< HEAD
     url(r'^$',views.home,name='index'),
     url(r'^home/', views.index, name ='index_home'),
     url(r'^forum/', include('forum.urls', namespace='forum')),
     url(r'^microsoft/',include('microsoft_auth.urls',namespace='microsoft')),
-=======
-    url(r'^$',views.index,name='index'),
->>>>>>> ccae6210697fbedb3e5b15e3364a08ee0500fd10
     url(r'post/(?P<id>\d+)/',views.post_detail,name='post_detail'),
     url(r'post/new/$',views.post_new,name="post_new"),
     url(r'post/delete/(?P<id>\d+)/',views.post_delete,name="post_delete"),
     url(r'comment/new/(?P<id>\d+)/',views.comment_new,name="comment_new"),
     url(r'^admin/', admin.site.urls),
-<<<<<<< HEAD
-
-=======
->>>>>>> ccae6210697fbedb3e5b15e3364a08ee0500fd10
 ]

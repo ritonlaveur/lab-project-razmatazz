@@ -25,13 +25,9 @@ SECRET_KEY = 'hrmm3=6hzb=ch7&_io5@+z!+a#_+5$ybvqz($4eps9q_mi1zg('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-<<<<<<< HEAD
-ALLOWED_HOSTS = ['lab-project-razmatazz-ritonlaveur.c9users.io', 'localhost', '0.0.0.0', '127.0.0.1']
-=======
-ALLOWED_HOSTS = ['lab-project-razmattaz-shakeelsubratty.c9users.io']
->>>>>>> ccae6210697fbedb3e5b15e3364a08ee0500fd10
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '0.0.0.0', '127.0.0.1']
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Application definition
 SITE_ID = 1
@@ -90,6 +86,12 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+import dj_database_url
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
+DATABASES['default']['CONN_MAX_AGE'] = 500
+
 
 AUTHENTICATION_BACKENDS = [
     'microsoft_auth.backends.MicrosoftAuthenticationBackend',
