@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+      <h1 class="title">{{user_name}} amazing skills</h1>
+        <h3>Posts</h3>
+
+    
+
+    <a href="{% url 'post_new' %}">Create new Post</a>
+
+    
+
+    <ul>
+
+        {% for post in posts %}
+
+            <a href="{% url 'post_detail' post.id%}">
+
+                <li><p>{{post.title}}</p> <p>{{post.date}}</p></li>
+
+                <a href="{% url 'post_delete' post.id %}">Delete</a>
+
+            </a>
+
+        {% endfor %}
+
+    </ul>
+{% endblock %}
