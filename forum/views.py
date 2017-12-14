@@ -98,19 +98,3 @@ def post_delete(request,id):
 
    return redirect('index')
 
-def post_detail(request,id):
-   try:
-      post = Post.objects.get(id=id)
-      comments = Comment.objects.filter(post__id=id)
-   except Post.DoesNotExist:
-      raise Http404('This post does not exist')
-   return render(request,'forum/post_detail.html',{
-      'post' : post,
-      'comments' : comments
-   })
-
-def post_delete(request,id):
-   post = Post.objects.get(id=id)
-   if post.author == request.session['user_email']:
-      post.delete()
-   return redirect('index_home')

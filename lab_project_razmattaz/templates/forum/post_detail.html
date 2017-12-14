@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 
-<<<<<<< HEAD
 
 
 {% block content %}
@@ -38,25 +37,3 @@
     </ul>
 
 {% endblock %}
-=======
-{% block content %}
-    <a href="{% url 'index' %}"><p>Back to forum</p></a>
-    <h3>{{post.title}}</h3>
-    <p>{{post.text}}</p>
-    <p>{{post.author}}</p>
-    <p>{{post.date}}</p>
-    <a href="{% url 'comment_new' post.id %}">Create new Comment</a>
-    <h3>Comments</h3>
-    <ul>
-        {% for comment in comments%}
-            <li>
-                <h4>{{comment.title}}</h4>
-                <p>{{comment.text}}</p>
-                <p>{{comment.author}}     {{comment.date}}</p>
-            </li>
-        {% endfor %}
-    </ul>
-{% endblock %}
-
-
->>>>>>> ccae6210697fbedb3e5b15e3364a08ee0500fd10

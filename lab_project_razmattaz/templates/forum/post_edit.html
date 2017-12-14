@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 
-<<<<<<< HEAD
 
 
 {% block content %}
@@ -18,13 +17,3 @@
    </form>
 
 {% endblock %}
-=======
-{% block content %}
-   <a href="{% url 'index' %}"><p>Back to forum</p></a>
-   <h1>New Post</h1>
-   <form method="POST" class="post-form">{% csrf_token %}
-       {{form.as_p}}
-       <button type="submit">Submit</button>
-   </form>
-{% endblock %}
->>>>>>> ccae6210697fbedb3e5b15e3364a08ee0500fd10
