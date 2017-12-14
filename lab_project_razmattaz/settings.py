@@ -51,7 +51,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'forum',
     'django.contrib.sites',
-    'microsoft_auth',
 ]
 
 ROOT_URLCONF = 'lab_project_razmattaz.urls'
