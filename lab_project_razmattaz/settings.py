@@ -32,15 +32,6 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # Application definition
 SITE_ID = 1
 
-# MIDDLEWARE_CLASSES = [
-#     'django.contrib.auth.middleware.AuthenticationMiddleware',
-#     'django.contrib.sessions.middleware.SessionMiddleware',
-#     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
-#     'django.contrib.messages.middleware.MessageMiddleware',
-#     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-#     'django.middleware.common.CommonMiddleware',
-# ]
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -63,9 +54,6 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'microsoft_auth',
 ]
-
-    # 'django.middleware.security.SecurityMiddleware',
-
 
 ROOT_URLCONF = 'lab_project_razmattaz.urls'
 
