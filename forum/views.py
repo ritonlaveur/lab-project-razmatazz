@@ -94,7 +94,8 @@ def post_detail(request,id):
 def post_delete(request,id):
 
    post = Post.objects.get(id=id)
-   post.delete()
+   if(post.author == request.session['user_email']):
+      post.delete()
 
-   return redirect('index')
+   return redirect('index_home')
 
