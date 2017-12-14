@@ -1,42 +1,39 @@
+# [SEG-LAB Project]
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+### Team Razmatazz
 
+- **[Tabia Salam](https://github.kcl.ac.uk/K)** - _k1630598@kcl.ac.uk_
+- **[Safwan Ahmed](https://github.kcl.ac.uk/K)** - _k1631012@kcl.ac.uk_
+- **[Shakeel Subratty](https://github.kcl.ac.uk/K)** - _k1630527@kcl.ac.uk_
+- **[Henry Val Ere](https://github.kcl.ac.uk/k1)** - _k1630993@kcl.ac.uk_
+- **[Matthew De Souza](https://github.kcl.ac.uk/K)** - _k1631149@kcl.ac.uk_
 
-Welcome to your Django project on Cloud9 IDE!
+## Preview
 
-Your Django project is already fully setup. Just click the "Run" button to start
-the application. On first run you will be asked to create an admin user. You can
-access your application from 'https://lab-project-razmattaz-shakeelsubratty.c9users.io/' and the admin page from 
-'https://lab-project-razmattaz-shakeelsubratty.c9users.io/admin'.
+![Website Preview]()
+[View Live Preview]()
 
-## Starting from the Terminal
+## Status
 
-In case you want to run your Django application from the terminal just run:
+[![Website Deployed]]
+[![Github All Releases]()
+[![Build Status]()
+[![Website]()
+[![devDependencies Status]()
 
-1) Run syncdb command to sync models to database and create Django's default superuser and auth system
+## Software and Tools used
 
-    $ python manage.py migrate
+### Django
+[Django](https://www.djangoproject.com/) is a free, open-source web framework, which follows the model-view-template architectural pattern. It is maintained by the Django Software Foundation, an independent organisation, and was first released in 2005. Django was a recommended framework for this project, given the duration of the project we were looking to develop a  web application as fast as possible, which could be implemented quickly and easily.
 
-2) Run Django
+#### Python 
+[Python](https://www.python.org/) Python is a widely used high-level programming language for general-purpose programming, created by Guido van Rossum and first released in 1991. Python was also key to our project as we had to educate ourselves about the use of Python in order to utilise Django for our web application. 
 
-    $ python manage.py runserver $IP:$PORT
-    
-## Configuration
+### Microsoft API
+The API we used for this project was an open source Python Framework. The API allowed us to effortlessly build and deploy our web application.
 
-You can configure your Python version and `PYTHONPATH` used in
-Cloud9 > Preferences > Project Settings > Language Support.
+### Cloud9
+[Cloud 9](https://c9.io/login) is an online integrated development environment, published as open source from version 3.0. Cloud 9 was the recommended IDE for the development of our project, this was ideal as Cloud 9 runs Django and Python. This environment gave us the opportunity to work on the project without having to download all the materials needed, and we could  link our environment to Git.
 
-## Support & Documentation
-
-Django docs can be found at https://www.djangoproject.com/
-
-You may also want to follow the Django tutorial to create your first application:
-https://docs.djangoproject.com/en/1.9/intro/tutorial01/
-
-Visit http://docs.c9.io for support, or to learn more about using Cloud9 IDE.
-To watch some training videos, visit http://www.youtube.com/user/c9ide
+### Heroku
+[Heroku](https://www.heroku.com/) is a service supporting several programming languages that is used as a web application deployment mode. As part of this project we were required to deploy our website using Heroku. Heroku is one of the first online cloud platforms, and has been in development since 2007. 
