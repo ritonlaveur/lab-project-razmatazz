@@ -2,24 +2,15 @@
 
 ### Team Razmatazz
 
-- **[Tabia Salam](https://github.kcl.ac.uk/K)** - _k1630598@kcl.ac.uk_
-- **[Safwan Ahmed](https://github.kcl.ac.uk/K)** - _k1631362@kcl.ac.uk_
-- **[Shakeel Subratty](https://github.kcl.ac.uk/K)** - _k1630527@kcl.ac.uk_
-- **[Henry Val Ere](https://github.kcl.ac.uk/k1)** - _k1630993@kcl.ac.uk_
-- **[Matthew De Souza](https://github.kcl.ac.uk/K)** - _k1631149@kcl.ac.uk_
+- **[Tabia Salam](https://github.kcl.ac.uk/k1631061)** - _k1631061@kcl.ac.uk_
+- **[Safwan Ahmed](https://github.kcl.ac.uk/k1631362)** - _k1631362@kcl.ac.uk_
+- **[Shakeel Subratty](https://github.kcl.ac.uk/k1631133)** - _k1631133@kcl.ac.uk_
+- **[Henry Valeyre](https://github.kcl.ac.uk/k1630490)** - _k1630490@kcl.ac.uk_
+- **[Matthew De Souza](https://github.kcl.ac.uk/k1630605)** - _k1630605@kcl.ac.uk_
 
 ## Preview
 
-![Website Preview]()
-[View Live Preview]()
-
-## Status
-
-[![Website Deployed]]
-[![Github All Releases]()
-[![Build Status]()
-[![Website]()
-[![devDependencies Status]()
+[View Live Preview](https://damp-harbor-41367.herokuapp.com/)
 
 ## Software and Tools used
 
