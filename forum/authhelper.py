@@ -3,7 +3,7 @@ import base64
 import json
 import time
 import requests
-
+# this file was imported from the tutorial and was modified according to our needs
 # Client ID and secret
 client_id = '37e282a3-5a64-43f2-94a7-604b9a6f3bd5'
 client_secret = 'dxotIUMJ9{#dclERA4542_#'
@@ -35,7 +35,7 @@ def get_signin_url(redirect_uri):
 
   return signin_url
   
-  
+  # this will allow us to get the token and use it
 def get_token_from_code(auth_code, redirect_uri):
   # Build the post form for the token request
   post_data = { 'grant_type': 'authorization_code',

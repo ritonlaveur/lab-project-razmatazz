@@ -32,7 +32,8 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Application definition
 SITE_ID = 1
-
+STATIC_URL = '/static/'
+# all of the middleware needed for our authentification
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -43,7 +44,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-
+# apps needed to install with the microsoft authentification api added
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -55,7 +56,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'microsoft_auth',
 ]
-
+# this is the root of our project
 ROOT_URLCONF = 'lab_project_razmattaz.urls'
 
 TEMPLATES = [
@@ -79,6 +80,7 @@ WSGI_APPLICATION = 'lab_project_razmattaz.wsgi.application'
 
 
 # Database
+# this is the link to our database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
 DATABASES = {
@@ -93,12 +95,14 @@ db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
 DATABASES['default']['CONN_MAX_AGE'] = 500
 
+
+# this is the authentification backend needed for the microsoft api
 AUTHENTICATION_BACKENDS = [
     'microsoft_auth.backends.MicrosoftAuthenticationBackend',
     'django.contrib.auth.backends.ModelBackend' # if you also want to use Django's authentication
     # I recommend keeping this with at least one database superuser in case of unable to use others
 ]
-
+# those are the setup password and client id given by microsoft when the app was linked to get the api
 MICROSOFT_AUTH_LOGIN_TYPE = 'o365'  # Enterprise Office 365 authentication
 MICROSOFT_AUTH_CLIENT_ID = '37e282a3-5a64-43f2-94a7-604b9a6f3bd5'
 MICROSOFT_AUTH_CLIENT_SECRET = 'dxotIUMJ9{#dclERA4542_#'

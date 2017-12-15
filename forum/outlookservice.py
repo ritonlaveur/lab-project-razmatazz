@@ -3,7 +3,7 @@ import uuid
 import json
 
 graph_endpoint = 'https://graph.microsoft.com/v1.0{0}'
-
+# this file is the file from the tutorial that was fully required the use of the API of microsoft
 # Generic API Sending
 def make_api_call(method, url, token, user_email, payload = None, parameters = None):
   # Send these headers with all API calls
@@ -35,7 +35,7 @@ def make_api_call(method, url, token, user_email, payload = None, parameters = N
       response = requests.post(url, headers = headers, data = json.dumps(payload), params = parameters)
 
   return response
-  
+# this function is passed to the views.py to get access to the token and to be able to manipulate it according to our forum
 def get_me(access_token):
   get_me_url = graph_endpoint.format('/me')
 
