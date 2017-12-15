@@ -20,13 +20,6 @@ class Post(models.Model):
         return self.title
 
 
-
-    def __str__(self):
-
-        return self.title
-
-
-
 class Comment(models.Model):
     post = models.ForeignKey(Post,on_delete=models.CASCADE,)
     title = models.CharField(max_length=200,default="Comment")

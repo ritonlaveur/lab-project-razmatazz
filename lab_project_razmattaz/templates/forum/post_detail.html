@@ -1,62 +1,65 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
 
-<<<<<<< HEAD
 
+/*set all the div to display the text in a grey text box*/
+.greyBox {
+    background-color: lightgrey;
+    width: 300px;
+    
+    padding: 25px;
+    margin: 25px;
+}
+/*Creating a top navigation frame*/
+.topnav {
+  overflow: hidden;
+  background-color: #999999;
+}
+/*this will display the post that the person clicked on and will allow the person to be able to write a comment and watch other persons's comments*/
+</style>
+</head>
+<body>
 
-{% block content %}
+    <div class="topnav">
+      <h2>Kings Forum : Post</h2>
+    </div>
+
 
     <a href="{% url 'index_home' %}"><p>Back to forum</p></a>
 
-    <h3>{{post.title}}</h3>
+    <center><h2>{{post.title}}</h2></center>
 
-    <p>{{post.text}}</p>
+    <center><p><br><div class = "greyBox">{{post.text}}</div></p></center>
 
-    <p>{{post.author}}</p>
+    <center><p>Posted by: {{post.author}} , posted: {{post.date}}</p></center>
+    
 
-    <p>{{post.date}}</p>
 
     <a href="{% url 'comment_new' post.id %}">Create new Comment</a>
 
-    <h3>Comments</h3>
+    <center><h2>Comments</h2></center>
 
     <ul>
 
         {% for comment in comments%}
 
-            <li>
+            <br>
+            
 
-                <h4>{{comment.title}}</h4>
+                <center><h4>{{comment.title}}</h4><center>
 
-                <p>{{comment.text}}</p>
+                <center><p><br><div class = "greyBox">{{comment.text}}</div></p><center>
 
-                <p>{{comment.author}}     {{comment.date}}</p>
-
-            </li>
+                <center><p>Posted by {{comment.author}} on the {{comment.date}}</p><center>
+                    <a href={% url 'comment_delete' comment.id%}> Delete </a>
+                <hr>
+            
 
         {% endfor %}
 
     </ul>
 
-{% endblock %}
-=======
-{% block content %}
-    <a href="{% url 'index' %}"><p>Back to forum</p></a>
-    <h3>{{post.title}}</h3>
-    <p>{{post.text}}</p>
-    <p>{{post.author}}</p>
-    <p>{{post.date}}</p>
-    <a href="{% url 'comment_new' post.id %}">Create new Comment</a>
-    <h3>Comments</h3>
-    <ul>
-        {% for comment in comments%}
-            <li>
-                <h4>{{comment.title}}</h4>
-                <p>{{comment.text}}</p>
-                <p>{{comment.author}}     {{comment.date}}</p>
-            </li>
-        {% endfor %}
-    </ul>
-{% endblock %}
-
-
->>>>>>> ccae6210697fbedb3e5b15e3364a08ee0500fd10
+</body>
+</html>

@@ -29,5 +29,7 @@ urlpatterns = [
     url(r'post/new/$',views.post_new,name="post_new"),
     url(r'post/delete/(?P<id>\d+)/',views.post_delete,name="post_delete"),
     url(r'comment/new/(?P<id>\d+)/',views.comment_new,name="comment_new"),
+    url(r'comment/delete/(?P<id>\d+)/',views.comment_delete,name="comment_delete"),
+    url(r'logout/',views.logout,name="logout"),
     url(r'^admin/', admin.site.urls),
 ]
