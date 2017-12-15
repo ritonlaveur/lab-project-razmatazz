@@ -25,8 +25,8 @@ SECRET_KEY = 'hrmm3=6hzb=ch7&_io5@+z!+a#_+5$ybvqz($4eps9q_mi1zg('
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-ALLOWED_HOSTS = ['lab-project-razmatazz-ritonlaveur.c9users.io', 'localhost', '0.0.0.0', '127.0.0.1']
-# ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '0.0.0.0', '127.0.0.1']
+# ALLOWED_HOSTS = ['lab-project-razmatazz-ritonlaveur.c9users.io', 'localhost', '0.0.0.0', '127.0.0.1']
+ALLOWED_HOSTS = ['damp-harbor-41367.herokuapp.com', 'localhost', '0.0.0.0', '127.0.0.1']
 # with : https://damp-harbor-41367.herokuapp.com/forum/gettoken
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
